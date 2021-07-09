@@ -1,6 +1,6 @@
 #!/bin/sh
 # Try to copy custom files, or create them
-mv /etc/sshkeys/* /etc/ssh/ || ssh-keygen -A
+cp /etc/sshkeys/* /etc/ssh/ || ssh-keygen -A
 /usr/sbin/sshd -E /tmp/ssh.log
 
 tail -f /tmp/ssh.log
