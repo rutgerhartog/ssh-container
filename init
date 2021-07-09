@@ -1,5 +1,6 @@
 #!/bin/sh
-[[ -f /etc/ssh/ssh_host_ed25519_key ]] || ssh-keygen -A
+# Try to copy custom files, or create them
+mv /etc/sshkeys/* /etc/ssh/ || ssh-keygen -A
 /usr/sbin/sshd -E /tmp/ssh.log
 
 tail -f /tmp/ssh.log
