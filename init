@@ -1,6 +1,7 @@
 #!/bin/sh
 # Try to copy custom files, or create them
 cp /etc/ssh/sshd_config /container/config/sshd_config
+cp /container/pubkeys/* /home/prox/.ssh/
 ( cp /etc/sshkeys/* /container/keys && chmod -R 0600 /container/keys/) || ssh-keygen -A
 /usr/sbin/sshd -E /container/logs/ssh.log -f /container/config/sshd_config
 
