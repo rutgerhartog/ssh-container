@@ -1,0 +1,3 @@
+#!/bin/ash
+echo "${SSH_PRIVATEKEY}" > /tmp/privatekey
+ssh -D "${SSH_LOCAL_PORT}" "${SSH_USER}@${SSH_SERVER}" -p ${SSH_PORT} -i /tmp/privatekey

@@ -9,7 +9,7 @@ COPY init /usr/sbin/local/init
 RUN chmod +x /usr/sbin/local/init
 
 # Add a user
-RUN adduser -D prox && passwd -u prox
+RUN adduser -D prox && passwd -u prox && mkdir -p /home/prox/.ssh
 EXPOSE 22
 
 # Create necessary directories
