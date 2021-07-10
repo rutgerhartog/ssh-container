@@ -14,7 +14,7 @@ EXPOSE 22
 
 # Create necessary directories
 RUN mkdir -p /container/keys /container/config /container/logs /container/pubkeys \
-  && chmod -R 777 /container/logs
+  && touch /container/logs/ssh.log && chmod 777 /container/logs/ssh.log
 
 # Run the init script, which starts the SSH daemon and reads the log file.
 CMD ["/usr/sbin/local/init"]
